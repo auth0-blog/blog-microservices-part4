@@ -127,6 +127,8 @@ module.exports.call =
                 return;
             }           
                
+            //Recursive, consider this in production. This won't be a problem
+            //once node.js and V8 support tail-call optimizations.
             function callNext(i) {                
                 if(i === services.length) {
                     callback(new Error("No service available"));
